@@ -1,3 +1,3 @@
-# comp1001
-## Assembly Programming - Vasileos
-Basic exerpts of the Assembly I II III as on DLE
+# comp1001 Assesment
+## Turning Basic C program into Assembly
+Iterationg over a preset array, and writing over said array with minor calculations involved
