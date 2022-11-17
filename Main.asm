@@ -6,7 +6,7 @@ ExitProcess PROTO, dwExitCode: DWORD  ; Exit process prototype
 
 .data ; data segment
 	; Variables below
-	intArray BYTE 3,2,3,1,7,5,7,8,9,2 ; Array we are performing on
+	intArray DWORD 3,2,3,1,7,5,7,8,9,2 ; Array we are performing on
 	arrayIterator BYTE 0 ; A counter for iterating over the array 
 
 .code ; code segment
@@ -14,11 +14,11 @@ ExitProcess PROTO, dwExitCode: DWORD  ; Exit process prototype
 main PROC ; main procedure
 	; write your assembly code here
 
-	lea ebx, intArray ; loads first element of our array
-	mov ah, [ebx + TYPE intArray * 1] ; loads the value of the ith element into ebx
+	lea eax, intArray ; loads first element of our array
+	mov ebx, [eax + TYPE intArray * 1] ; loads the value of the ith element into ebx
 
-	mov al, 5
-	mov [ebx + TYPE intArray * 1], al ; puts the manipulated product back into the relevant space
+	mov ecx, 5
+	mov [eax + TYPE intArray * 1], ebx ; puts the manipulated product back into the relevant space
 
 	INVOKE ExitProcess, 0 ; call exit function
   
